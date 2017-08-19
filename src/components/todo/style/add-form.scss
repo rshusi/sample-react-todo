@@ -1,0 +1,21 @@
+.todo-form {
+  padding: 15px;
+
+  button.btn:focus, button.btn:active {
+    outline: none;
+  }
+
+  input.form-control {
+    font-size: 20px;
+    padding: 0px;
+    border: 0px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0px;
+    box-shadow: none;
+
+    &:focus {
+      border-color: #337ab7;
+      box-shadow: none;
+    }
+  }
+}

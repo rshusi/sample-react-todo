@@ -1,0 +1,18 @@
+.todo-filter {
+  padding-bottom: 20px;
+
+  .center-pills {
+    display: flex;
+    justify-content: center;
+
+    &.nav-pills>li {
+      &+ li {
+        margin-left: 5px;
+      }
+
+      &>a {
+          padding: 3px;
+      }
+    }
+  }
+}

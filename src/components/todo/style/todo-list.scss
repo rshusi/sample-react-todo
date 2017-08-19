@@ -1,0 +1,25 @@
+.todo-list {
+  padding: 20px 0px;
+
+  button.btn {
+    &:focus,
+    &:active {
+        outline: none;
+    }
+  }
+
+  .todo-remove {
+    opacity: 0.3;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .no-todos {
+    color: #afa8a2;
+    font-size: 22px;
+    text-align: center;
+    padding: 20px;
+  }
+}
