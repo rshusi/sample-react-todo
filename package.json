@@ -5,7 +5,7 @@
   "author": "Ronnel James Miranda Bote <rshusi> (https://github.com/rshusi)",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "3",
+    "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.0.2",
