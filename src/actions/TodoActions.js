@@ -1,32 +1,35 @@
 import {
-  TODO_ADD, TODO_COMPLETE,
-  TODO_PENDING, TODO_REMOVE } from '../constants/action-types';
+  TODO_ADD,
+  TODO_COMPLETE,
+  TODO_PENDING,
+  TODO_REMOVE
+} from "../constants/action-types";
 
 export const todoAdd = (todo) => {
   return {
     type: TODO_ADD,
-    payload: todo,
+    payload: todo
   };
 };
 
 export const todoComplete = (id) => {
   return {
     type: TODO_COMPLETE,
-    payload: id,
+    payload: id
   };
 };
 
 export const todoPending = (id) => {
   return {
     type: TODO_PENDING,
-    payload: id,
+    payload: id
   };
 };
 
 export const todoRemove = (id) => {
   return {
     type: TODO_REMOVE,
-    payload: id,
+    payload: id
   };
 };
 

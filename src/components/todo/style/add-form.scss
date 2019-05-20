@@ -1,7 +1,8 @@
 .todo-form {
   padding: 15px;
 
-  button.btn:focus, button.btn:active {
+  button.btn:focus,
+  button.btn:active {
     outline: none;
   }
 
@@ -17,5 +18,10 @@
       border-color: #337ab7;
       box-shadow: none;
     }
+  }
+
+  .help-block {
+    float: right;
+    color: #afa8a2;
   }
 }

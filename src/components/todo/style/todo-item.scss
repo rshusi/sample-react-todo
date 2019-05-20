@@ -1,9 +1,10 @@
 .todo-item {
-  p, span {
+  p,
+  span {
     font-size: 20px;
   }
 
-  &> div:nth-child(1) {
+  & > div:nth-child(1) {
     padding: 0px;
 
     & > div {

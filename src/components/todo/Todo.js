@@ -1,17 +1,23 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Modal } from 'react-bootstrap';
-
-import { todoAdd, todoComplete, todoPending, todoRemove } from '../../actions/TodoActions';
-import { filterViewAll, filterViewPending, filterViewCompleted } from '../../actions/FilterActions';
-
-import Header from './component/Header';
-import AddForm from './component/AddForm';
-import Filter from './component/Filter';
-import TodoList from './component/TodoList';
+import React, { Component } from "react";
+import { Modal } from "react-bootstrap";
+import { connect } from "react-redux";
+import {
+  filterViewAll,
+  filterViewCompleted,
+  filterViewPending
+} from "../../actions/FilterActions";
+import {
+  todoAdd,
+  todoComplete,
+  todoPending,
+  todoRemove
+} from "../../actions/TodoActions";
+import AddForm from "./component/AddForm";
+import Filter from "./component/Filter";
+import Header from "./component/Header";
+import TodoList from "./component/TodoList";
 
 class Todo extends Component {
-
   constructor(props) {
     super(props);
 
@@ -22,10 +28,8 @@ class Todo extends Component {
   }
 
   onTodoChange(status, id) {
-    if (!status)
-      this.props.completeTodo(id);
-    else
-      this.props.pendingTodo(id);
+    if (!status) this.props.completeTodo(id);
+    else this.props.pendingTodo(id);
   }
 
   onTodoRemove(id) {
@@ -50,16 +54,19 @@ class Todo extends Component {
   }
 
   render() {
-    return(
+    return (
       <div>
         <Modal.Dialog>
           <Modal.Body>
             <Header />
             <AddForm onTodoAdd={this.onTodoAdd} />
             <Filter onFilterChange={this.onFilterChange} />
-            <TodoList todos={this.props.todos}
+            <TodoList
+              filter={this.props.filter}
+              todos={this.props.todos}
               onTodoChange={this.onTodoChange}
-              onTodoRemove={this.onTodoRemove} />
+              onTodoRemove={this.onTodoRemove}
+            />
           </Modal.Body>
         </Modal.Dialog>
       </div>
@@ -69,12 +76,12 @@ class Todo extends Component {
 
 const getVisibleTodos = (todos, filter) => {
   switch (filter) {
-    case 'SHOW_ALL':
-      return todos
-    case 'SHOW_COMPLETED':
-      return todos.filter(todo => todo.completed)
-    case 'SHOW_PENDING':
-      return todos.filter(todo => !todo.completed)
+    case "SHOW_ALL":
+      return todos;
+    case "SHOW_COMPLETED":
+      return todos.filter((todo) => todo.completed);
+    case "SHOW_PENDING":
+      return todos.filter((todo) => !todo.completed);
     default:
       return todos;
   }
@@ -82,7 +89,8 @@ const getVisibleTodos = (todos, filter) => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    todos: getVisibleTodos(state.Todo.todos, state.Filter),
+    filter: state.Filter,
+    todos: getVisibleTodos(state.Todo.todos, state.Filter)
   };
 };
 
@@ -112,4 +120,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Todo);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Todo);

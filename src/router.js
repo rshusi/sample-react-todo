@@ -1,15 +1,9 @@
-import React from 'react';
-import {
-  Route,
-  Switch,
-  BrowserRouter,
-} from 'react-router-dom';
-
-import { index } from './constants/route-paths';
-
-import Layout from './components/layout.js';
-import Todo from './components/todo/Todo';
-import PageNotFound from './components/404/PageNotFound';
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import PageNotFound from "./components/404/PageNotFound";
+import Layout from "./components/layout.js";
+import Todo from "./components/todo/Todo";
+import { index } from "./constants/route-paths";
 
 const Router = ({ match }) => (
   <BrowserRouter>

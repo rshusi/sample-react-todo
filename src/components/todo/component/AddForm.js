@@ -1,7 +1,6 @@
-import '../style/add-form.css';
-
-import React, { Component } from 'react';
-import { FormGroup, FormControl } from 'react-bootstrap';
+import React, { Component } from "react";
+import { FormControl, FormGroup, HelpBlock } from "react-bootstrap";
+import "../style/add-form.scss";
 
 class AddForm extends Component {
   constructor(props) {
@@ -9,8 +8,8 @@ class AddForm extends Component {
 
     this.state = {
       formData: {
-        todo: '',
-      },
+        todo: ""
+      }
     };
   }
 
@@ -18,38 +17,42 @@ class AddForm extends Component {
     this.setState({
       formData: {
         ...this.state.formData,
-        todo: e.target.value,
-      },
+        todo: e.target.value
+      }
     });
   }
 
   onTodoAdd(e) {
     e.preventDefault();
 
-    if (!this.state.formData.todo.trim())
-      return;
+    if (!this.state.formData.todo.trim()) return;
 
     this.props.onTodoAdd(this.state.formData.todo);
 
     this.setState({
       formData: {
         ...this.state.formData,
-        todo: '',
-      },
+        todo: ""
+      }
     });
   }
 
   render() {
-    return(
+    return (
       <div className="todo-form">
         <div className="row">
           <div className="col-xs-12">
             <form onSubmit={(e) => this.onTodoAdd(e)}>
               <FormGroup>
-                <FormControl type="text" placeholder="What needs to be done."
-                             value={this.state.formData.todo} name="todo"
-                             onChange={(e) => this.onInputChange(e)} />
+                <FormControl
+                  type="text"
+                  placeholder="What needs to be done"
+                  value={this.state.formData.todo}
+                  name="todo"
+                  onChange={(e) => this.onInputChange(e)}
+                />
               </FormGroup>
+              <HelpBlock>Press enter to add a task</HelpBlock>
             </form>
           </div>
         </div>

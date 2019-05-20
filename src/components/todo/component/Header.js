@@ -1,6 +1,5 @@
-import '../style/header.css';
-
-import React from 'react';
+import React from "react";
+import "../style/header.scss";
 
 const Header = () => (
   <div className="todo-header">

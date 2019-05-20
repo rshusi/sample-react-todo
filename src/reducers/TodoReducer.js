@@ -1,11 +1,13 @@
-import shortid from 'shortid';
-
+import shortid from "shortid";
 import {
-  TODO_ADD, TODO_COMPLETE,
-  TODO_PENDING, TODO_REMOVE } from '../constants/action-types';
+  TODO_ADD,
+  TODO_COMPLETE,
+  TODO_PENDING,
+  TODO_REMOVE
+} from "../constants/action-types";
 
 let initialState = {
-  todos: [ ]
+  todos: []
 };
 
 const TodoReducer = (state = initialState, action) => {
@@ -13,29 +15,36 @@ const TodoReducer = (state = initialState, action) => {
     case TODO_ADD:
       state = {
         ...state,
-        todos: [ ...state.todos, {
-          id: shortid.generate(),
-          text: action.payload,
-          completed: false,
-        }],
+        todos: [
+          ...state.todos,
+          {
+            id: shortid.generate(),
+            text: action.payload,
+            completed: false
+          }
+        ]
       };
       break;
     case TODO_COMPLETE:
       state = {
         ...state,
-        todos: state.todos.map((todo,id) => todo.id === action.payload ? {...todo, completed:true} : todo),
+        todos: state.todos.map((todo, id) =>
+          todo.id === action.payload ? { ...todo, completed: true } : todo
+        )
       };
       break;
     case TODO_PENDING:
       state = {
         ...state,
-        todos: state.todos.map((todo,id) => todo.id === action.payload ? {...todo, completed:false} : todo),
+        todos: state.todos.map((todo, id) =>
+          todo.id === action.payload ? { ...todo, completed: false } : todo
+        )
       };
       break;
     case TODO_REMOVE:
       state = {
         ...state,
-        todos: state.todos.filter((todo,id) => todo.id !== action.payload),
+        todos: state.todos.filter((todo, id) => todo.id !== action.payload)
       };
       break;
     default:
