@@ -1,6 +1,6 @@
-# sample-react-todo
+# react-todo
 
-A sample todo application using the [create-react-app-boilerplate](https://github.com/ronneljamesbote/create-react-app-boilerplate).
+A simple todo application using the [create-react-app-boilerplate](https://github.com/ronneljamesbote/create-react-app-boilerplate).
 
 ![screenshot](todo-screenshot.png)
 

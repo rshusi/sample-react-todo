@@ -3,7 +3,7 @@ import "../style/header.scss";
 
 const Header = () => (
   <div className="todo-header">
-    <h2>Todos</h2>
+    <h2>React Todo</h2>
   </div>
 );
 
