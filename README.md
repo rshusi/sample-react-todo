@@ -2,6 +2,8 @@
 
 A simple todo application using the [create-react-app-boilerplate](https://github.com/ronneljamesbote/create-react-app-boilerplate).
 
+Check [here](https://react-todo-live-demo.web.app) for live demo.
+
 ![screenshot](todo-screenshot.png)
 
 ## Getting Started
